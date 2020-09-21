@@ -1,0 +1,23 @@
+{
+  "name": "ninjacrud",
+  "version": "1.0.0",
+  "description": "CRUD TUTORIAL",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Agung",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^12.0.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "ejs": "^2.6.1",
+    "express": "^4.17.0",
+    "mysql": "^2.17.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.17",
+    "uuid": "^3.3.2"
+  }
+}
