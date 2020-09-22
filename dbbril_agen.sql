@@ -43,14 +43,14 @@ CREATE TABLE `agen` (
 --
 
 INSERT INTO `agen` (`id`, `no_lisensi`, `nama_agen`, `id_agen_level`, `status`, `status_tgl`, `wilayah_kerja`) VALUES
-(1, 1002, 'Endang', 1, 1, '2020-09-19', 'JAKARTA'),
-(2, 1001, 'Agung', 2, 1, '2020-09-19', 'JAKARTA'),
-(3, 1003, 'Perdana', 3, 1, '2020-09-19', 'JAKARTA'),
-(4, 1004, 'Gumelar', 4, 1, '2020-09-19', 'JAKARTA'),
-(5, 1005, 'Tegar', 4, 1, '2020-09-20', 'BEKASI'),
-(6, 1006, 'Mahesa', 3, 1, '2020-09-20', 'BEKASI'),
-(7, 1007, 'Pamungkas', 2, 1, '2020-09-20', 'BEKASI'),
-(8, 1008, 'Akbar', 1, 1, '2020-09-20', 'BEKASI'),
+(1, 1002, 'Endang', 1, 1, '2020-09-19', 'DKI JAKARTA'),
+(2, 1001, 'Agung', 2, 1, '2020-09-19', 'DKI JAKARTA'),
+(3, 1003, 'Perdana', 3, 1, '2020-09-19', 'DKI JAKARTA'),
+(4, 1004, 'Gumelar', 4, 1, '2020-09-19', 'DKI JAKARTA'),
+(5, 1005, 'Tegar', 4, 1, '2020-09-20', 'Jawa Barat'),
+(6, 1006, 'Mahesa', 3, 1, '2020-09-20', 'Jawa Barat'),
+(7, 1007, 'Pamungkas', 2, 1, '2020-09-20', 'Jawa Barat'),
+(8, 1008, 'Akbar', 1, 1, '2020-09-20', 'Jawa Barat'),
 (9, 1010, 'Mahendra', 1, 1, '2020-09-20', 'Aceh'),
 (11, 1012, 'Dimas', 3, 1, '2020-09-20', 'Aceh'),
 (12, 1013, 'Rendi', 1, 1, '2020-09-20', 'Aceh'),
