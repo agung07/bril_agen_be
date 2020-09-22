@@ -20,14 +20,13 @@ module.exports = (app, connection) => {
         const quesrySelect = `
             SELECT id 
             FROM agen
-            WHERE 
-            no_lisensi = ${req.body.wilayah_kerja} 
-            OR wilayah_kerja = '${req.body.wilayah_kerja}'
+            WHERE wilayah_kerja = '${req.body.wilayah_kerja}'
             AND id_agen_level = ${req.body.id_agen_level}
+            OR no_lisensi = ${req.body.no_lisensi} 
         `;
+
         connection.query(quesrySelect , (err, rows) => { 
-            console.log("rows: ", rows)           
-            if(err || rows.length > 1) {
+            if(err || rows.length > 0) {
                 res.status(400)
                 res.end();
                 return;
@@ -43,7 +42,7 @@ module.exports = (app, connection) => {
     })
 
     app.get('/agen', (req, res) => {
-        console.log("req", req.body)
+        
         const query = `
         SELECT a.id, a.nama_agen, al.urutan, a.wilayah_kerja
         FROM agen AS a
@@ -53,7 +52,7 @@ module.exports = (app, connection) => {
             SELECT id_agen FROM agen_struktur
         );
         `
-        console.log("query:", query )
+        
         connection.query(query , (err, rows, field) => {
             
             if(err) throw err;
@@ -118,12 +117,21 @@ module.exports = (app, connection) => {
         })
     })
 
-    app.get('/structur_agen', (req, res) => {
+    app.get('/agen_level', (req, res) => {
+        let condition = '';
+        const isWilayahQueryExist = req.query.hasOwnProperty('wilayah_kerja');
+        const isStatusQueryExist = req.query.hasOwnProperty('status');
+
+        if(isWilayahQueryExist) condition = `WHERE a.wilayah_kerja = '${req.query.wilayah_kerja}'`;
+        if(isWilayahQueryExist && isStatusQueryExist) condition += ` AND a.status = ${req.query.status}`;
+        else if(isStatusQueryExist) condition =`WHERE a.status = ${req.query.status}`;
+
         const query = `
             SELECT *
             FROM agen AS a
             INNER JOIN agen_level AS al
             ON a.id_agen_level = al.id
+            ${condition}
         `
         connection.query(query , (err, rows, field) => {
             
